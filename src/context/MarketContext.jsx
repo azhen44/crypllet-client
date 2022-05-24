@@ -70,8 +70,12 @@ export const MarketProvider = ({children}) => {
     checkIfWalletIsConnnected();
     checkIfTransactionExist();
     getTickerData();
-    //getMyFaves();
   },[])
+
+  useEffect( () => { 
+    getMyFaves();
+  },[userID])
+
 
 
 

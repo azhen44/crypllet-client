@@ -68,9 +68,9 @@ const MyFave = () => {
     )
   }) 
 
-  useEffect(()=>{
-    getMyFaves();
-  },[])
+  // useEffect(()=>{
+  //   getMyFaves();
+  // },[])
 
   
   return (
