@@ -49,7 +49,7 @@ export const MarketProvider = ({children}) => {
     const getMyFaves = async () => {    
       
       try {
-        const res = await axios.get(`https://crypllet-api.herokuapp.com/${localStorage.getItem("userID")}/user_coins`)
+        const res = await axios.get(`https://crypllet-api.herokuapp.com/${userID}/user_coins`)
         if(res) {
           const newArr = res.data.map(coin => {
             return coin.coin_id
