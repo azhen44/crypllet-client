@@ -54,7 +54,7 @@ const MyFave = () => {
       method: 'DELETE',
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
       data: qs.stringify(data),
-      url : "http://localhost:3001/del/user_coins"
+      url : "/del/user_coins"
     })
     .catch(error => {
       console.log(error);

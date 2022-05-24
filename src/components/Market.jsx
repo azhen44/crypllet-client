@@ -82,7 +82,7 @@ const Market = () => {
           method: 'POST',
           headers: { 'content-type': 'application/x-www-form-urlencoded' },
           data: qs.stringify(data),
-          url : "http://localhost:3001/user_coins"
+          url : "/user_coins"
         })
         .then(function (response) {
           console.log(response)
