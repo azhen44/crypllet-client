@@ -70,7 +70,7 @@ export const MarketProvider = ({children}) => {
     checkIfWalletIsConnnected();
     checkIfTransactionExist();
     getTickerData();
-    getMyFaves();
+    //getMyFaves();
   },[])
 
 
