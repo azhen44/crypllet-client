@@ -57,7 +57,7 @@ export const TransactionProvider = ({children}) => {
     const params = new URLSearchParams()
     params.append('wallet_address', currentAccount)
     console.log('currentAcc', currentAccount) 
-      axios.post("http://localhost:3001/users", params
+      axios.post("/users", params
         ,{
         headers: {
           
@@ -85,7 +85,7 @@ export const TransactionProvider = ({children}) => {
         params.append('wallet_address', currentAccount)
         console.log(params)
         console.log("Connected Wallet: ", accounts[0])
-        const getID = await axios.get('http://localhost:3001/getmyid', { params: {wallet_address : accounts[0]}})
+        const getID = await axios.get('/getmyid', { params: {wallet_address : accounts[0]}})
         console.log('id from backend', getID.data[0].id)
         setUserID(getID.data[0].id)
     
