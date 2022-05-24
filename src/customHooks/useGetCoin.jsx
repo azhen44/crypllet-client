@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import axios from 'axios'
+
 
 export default function useSearch(pageNumber) {
   const[loading, setLoading] = useState(true)

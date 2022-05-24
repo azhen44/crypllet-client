@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from 'react-router-dom';
 import { MarketContext } from "../context/MarketContext";
-import axios from "axios";
+
 import { TransactionContext } from "../context/TransactionContext";
 import useGetCoin from "../customHooks/useGetCoin.jsx";
 import qs from 'qs'

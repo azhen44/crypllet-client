@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import { TransactionContext } from './TransactionContext';
 export const MarketContext = React.createContext({coinInfo:[]});
-import axios from 'axios';
+
 
 
 export const MarketProvider = ({children}) => {
