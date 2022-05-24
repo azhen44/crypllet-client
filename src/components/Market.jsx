@@ -16,7 +16,7 @@ const Tickercard = ({lastCoinRef, index, id,symbol, name, price, img, priceChang
 
   useEffect( () => {
     getMyFaves()
-  },[])
+  },[faveCoins])
 
   useEffect(() => {
     setListOfFaveCoins(faveCoins.map(x => x.symbol))
