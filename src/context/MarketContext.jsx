@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from 'react';
 import { TransactionContext } from './TransactionContext';
 export const MarketContext = React.createContext({coinInfo:[]});
 import axios from 'axios';
-import axiosConfig from '../axiosConfig';
+
 
 export const MarketProvider = ({children}) => {
   const [faveCoins, setFaveCoins] = useState([]) // favourite coins to be displayed  
@@ -49,7 +49,7 @@ export const MarketProvider = ({children}) => {
     const getMyFaves = async () => {    
       
       try {
-        const res = await axiosConfig.get(`/${localStorage.getItem("userID")}/user_coins`)
+        const res = await axios.get(`https://crypllet-api.herokuapp.com/${localStorage.getItem("userID")}/user_coins`)
         if(res) {
           const newArr = res.data.map(coin => {
             return coin.coin_id

@@ -7,7 +7,7 @@ import useGetCoin from "../customHooks/useGetCoin.jsx";
 import { TransactionContext } from "../context/TransactionContext";
 import "./MyFave.css"
 import qs from 'qs'
-import axiosConfig from "../axiosConfig";
+import axios from 'axios'
 
 //Renders each coin
 const Tickercard = ({id, symbol, name, price, img, priceChange24hr, delFaveCoin}) => {
@@ -50,11 +50,11 @@ const MyFave = () => {
       return prev.filter( each => each.symbol !== symbolName)    
     })
  
-    axiosConfig({
+    axios({
       method: 'DELETE',
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
       data: qs.stringify(data),
-      url : "/del/user_coins"
+      url : "https://crypllet-api.herokuapp.com/del/user_coins"
     })
     .catch(error => {
       console.log(error);

@@ -7,7 +7,7 @@ import { TransactionContext } from "../context/TransactionContext";
 import useGetCoin from "../customHooks/useGetCoin.jsx";
 import qs from 'qs'
 import "./Market.css";
-import axiosConfig from "../axiosConfig";
+import axios from 'axios'
 
 const Tickercard = ({lastCoinRef, index, id,symbol, name, price, img, priceChange24hr, faveItem}) => {
   const {faveCoins, getMyFaves } = useContext(MarketContext) 
@@ -78,11 +78,11 @@ const Market = () => {
         
         setFaveCoins((prev) => [...prev, coins[index]])
         console.log('fave coins in faveItem func', faveCoins)
-        axiosConfig({
+        axios({
           method: 'POST',
           headers: { 'content-type': 'application/x-www-form-urlencoded' },
           data: qs.stringify(data),
-          url : "/user_coins"
+          url : "https://crypllet-api.herokuapp.com/user_coins"
         })
         .then(function (response) {
           console.log(response)
