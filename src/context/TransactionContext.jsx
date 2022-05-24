@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios'
 import { ethers } from 'ethers'
 import {contractABI, contractAddress } from '../utils/constants'
+import axiosConfig from '../axiosConfig';
 export const TransactionContext = React.createContext();
 const {ethereum}  = window;
 
@@ -57,7 +58,7 @@ export const TransactionProvider = ({children}) => {
     const params = new URLSearchParams()
     params.append('wallet_address', currentAccount)
     console.log('currentAcc', currentAccount) 
-      axios.post("/users", params
+      axiosConfig.post("/users", params
         ,{
         headers: {
           
@@ -85,7 +86,7 @@ export const TransactionProvider = ({children}) => {
         params.append('wallet_address', currentAccount)
         console.log(params)
         console.log("Connected Wallet: ", accounts[0])
-        const getID = await axios.get('/getmyid', { params: {wallet_address : accounts[0]}})
+        const getID = await axiosConfig.get('/getmyid', { params: {wallet_address : accounts[0]}})
         console.log('id from backend', getID.data[0].id)
         setUserID(getID.data[0].id)
     

@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from 'axios'
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import { Chart, Line } from 'react-chartjs-2';
@@ -7,7 +7,6 @@ import parse from 'html-react-parser';
 import LoadSpinner from './LoadSpinner';
 
 const InfoCard = ({props}) => {
-  const summary = props.description.en.split(',',[1])[0]
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',

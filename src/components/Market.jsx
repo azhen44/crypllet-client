@@ -3,11 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from 'react-router-dom';
 import { MarketContext } from "../context/MarketContext";
-import axios from "axios";
 import { TransactionContext } from "../context/TransactionContext";
 import useGetCoin from "../customHooks/useGetCoin.jsx";
 import qs from 'qs'
 import "./Market.css";
+import axiosConfig from "../axiosConfig";
 
 const Tickercard = ({lastCoinRef, index, id,symbol, name, price, img, priceChange24hr, faveItem}) => {
   const {faveCoins, getMyFaves } = useContext(MarketContext) 
@@ -78,7 +78,7 @@ const Market = () => {
         
         setFaveCoins((prev) => [...prev, coins[index]])
         console.log('fave coins in faveItem func', faveCoins)
-        axios({
+        axiosConfig({
           method: 'POST',
           headers: { 'content-type': 'application/x-www-form-urlencoded' },
           data: qs.stringify(data),

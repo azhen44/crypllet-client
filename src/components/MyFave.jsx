@@ -1,5 +1,4 @@
 import React ,{useContext, useEffect, useState} from "react";
-import axios from 'axios'
 import { MarketContext } from "../context/MarketContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faX } from "@fortawesome/free-solid-svg-icons";
@@ -8,6 +7,7 @@ import useGetCoin from "../customHooks/useGetCoin.jsx";
 import { TransactionContext } from "../context/TransactionContext";
 import "./MyFave.css"
 import qs from 'qs'
+import axiosConfig from "../axiosConfig";
 
 //Renders each coin
 const Tickercard = ({id, symbol, name, price, img, priceChange24hr, delFaveCoin}) => {
@@ -50,7 +50,7 @@ const MyFave = () => {
       return prev.filter( each => each.symbol !== symbolName)    
     })
  
-    axios({
+    axiosConfig({
       method: 'DELETE',
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
       data: qs.stringify(data),
