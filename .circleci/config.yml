@@ -17,7 +17,7 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "./client/package.json" }}
-      - run: npm run dev
+      - run: npm run build
 
 workflows:
   version: 2
