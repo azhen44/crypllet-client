@@ -68,10 +68,9 @@ const MyFave = () => {
     )
   }) 
 
-  useEffect(()=>{
-    console.log(currentAccount, userID)
-    getMyFaves();
-  },[])
+  // useEffect(()=>{
+  //   getMyFaves();
+  // },[])
 
   
   return (
