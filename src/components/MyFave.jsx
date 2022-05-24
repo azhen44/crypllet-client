@@ -1,4 +1,5 @@
 import React ,{useContext, useEffect, useState} from "react";
+import axios from 'axios'
 import { MarketContext } from "../context/MarketContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faX } from "@fortawesome/free-solid-svg-icons";
