@@ -124,7 +124,7 @@ export const TransactionProvider = ({children}) => {
         }
       }
 
-      window.location.replace('/');
+      window.location.href = "/";
 
       
     } catch (error) {
@@ -161,7 +161,7 @@ export const TransactionProvider = ({children}) => {
 
       const transactionCount = await transactionContract.getTransactionCount();
       setTransactionCount(transactionCount.toNumber());
-      window.location.reload();
+      window.location.href = "/";
 
       
     } catch (error) {
