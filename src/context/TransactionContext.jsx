@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import { ethers } from 'ethers'
 import {contractABI, contractAddress } from '../utils/constants'
@@ -125,7 +124,7 @@ export const TransactionProvider = ({children}) => {
         }
       }
 
-      window.location.reload();
+      window.location.replace('/');
 
       
     } catch (error) {
@@ -135,7 +134,6 @@ export const TransactionProvider = ({children}) => {
   }
 
   const sendTransaction = async () => {
-    let navigate = useNavigate();
     try {
       if (!ethereum) return alert ("Please install metamask");
       const {addressTo, amount, keyword, message} = formData;
@@ -163,8 +161,7 @@ export const TransactionProvider = ({children}) => {
 
       const transactionCount = await transactionContract.getTransactionCount();
       setTransactionCount(transactionCount.toNumber());
-      //window.location.reload();
-      navigate(`/`)
+      window.location.reload();
 
       
     } catch (error) {
